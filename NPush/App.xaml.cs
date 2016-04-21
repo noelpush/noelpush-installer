@@ -16,11 +16,6 @@ namespace NoelPush
             if (!IsSingleInstance())
                 Environment.Exit(1);
 
-            var userId = RegistryService.GetUserId();
-            var version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Major.ToString();
-
-            UpdatesService.Initialize(userId, version);
-
             base.OnStartup(e);
         }
 
@@ -36,11 +31,11 @@ namespace NoelPush
         {
             try
             {
-                Mutex.OpenExisting("NOELPUSH");
+                Mutex.OpenExisting("NOELPUSHINSTALL");
             }
             catch
             {
-                mutex = new Mutex(true, "NOELPUSH");
+                mutex = new Mutex(true, "NOELPUSHINSTALL");
                 return true;
             }
 
