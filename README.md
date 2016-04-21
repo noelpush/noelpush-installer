@@ -1,2 +1,3 @@
-# noelpush-installer
-Installeur de noelpush
+# [NoelPush Installer](http://www.noelpush.com/)
+
+Installeur de NoelPush
