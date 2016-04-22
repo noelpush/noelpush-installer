@@ -5,7 +5,6 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Windows;
 
@@ -18,7 +17,6 @@ namespace NoelPush.Services
     {
         private static MainWindowViewModel viewModel;
         private static Stopwatch watch;
-        private static Timer timer;
 
         public static void Download(MainWindowViewModel mainWindowViewModel)
         {
@@ -57,7 +55,7 @@ namespace NoelPush.Services
             var path = Directory.GetCurrentDirectory() + "\\noelpush.exe";
             Process.Start(path);
 
-            timer = new Timer(Close, null, 1000, 1000);
+            new Timer(Close, null, 1000, 1000);
         }
 
         private static void Close(object state = null)
