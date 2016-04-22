@@ -29,7 +29,10 @@
             Grid.Row="2"
             Grid.Column="1"
             HorizontalAlignment="Stretch"
-            Value="{Binding ProgressValue}"/>
+            Height="19"
+            Value="{Binding ProgressValue}"
+            Style="{StaticResource ProgressBarStyle}"
+            />
         
         <TextBlock
             Grid.Row="3"
