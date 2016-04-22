@@ -18,6 +18,20 @@ namespace NoelPush.ViewModels
             }
         }
 
+        private string remainingTime;
+        public string RemainingTime
+        {
+            get { return this.remainingTime; }
+            set
+            {
+                if (this.remainingTime != value)
+                {
+                    this.remainingTime = value + " s";
+                    this.FirePropertyChanged("RemainingTime");
+                }
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
         private void FirePropertyChanged(string name)
         {
